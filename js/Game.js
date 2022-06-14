@@ -113,8 +113,8 @@ class Game {
     //Key reset
     let keys = document.querySelectorAll("button.key");
     for (let c = 0; c < keys.length; c++) {
-      keys[c].classList.remove = "chosen";
-      keys[c].classList.remove = "wrong";
+      keys[c].classList.remove("chosen");
+      keys[c].classList.remove("wrong");
       keys[c].disabled = false;
     }
   }
