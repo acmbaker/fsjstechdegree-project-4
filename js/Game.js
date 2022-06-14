@@ -7,11 +7,11 @@ class Game {
   constructor() {
     this.missed = 0;
     this.phrases = [
-      "Bo Jo",
-      "Quick Run",
-      "Jo Smoke",
-      "Zombie Survive",
-      "Alien Ant",
+      new Phrase("Bo Jo"),
+      new Phrase("Quick Run"),
+      new Phrase("Jo Smoke"),
+      new Phrase("Zombie Survive"),
+      new Phrase("Alien Ant"),
     ];
     this.activePhrase = null;
   }
@@ -19,7 +19,7 @@ class Game {
   //startGame method, runs start game button click
   startGame() {
     document.querySelector("div#overlay").style.display = "none";
-    let newPhrase = new Phrase(this.getRandomPhrase());
+    let newPhrase = this.getRandomPhrase();
     this.activePhrase = newPhrase;
     this.activePhrase.addPhraseToDisplay();
   }
@@ -36,21 +36,21 @@ class Game {
       e.target.disabled = true;
 
       if (this.activePhrase.checkLetter(e.target.textContent)) {
-        e.target.classList.add = "chosen";
+        e.target.classList.add("chosen");
         this.activePhrase.showMatchedLetter(e.target.textContent);
       }
       if (!this.activePhrase.checkLetter(e.target.textContent)) {
-        e.target.classList.add = "wrong";
+        e.target.classList.add("wrong");
         this.removeLife();
       }
     } else {
       e.disabled = true;
 
       if (this.activePhrase.checkLetter(e.textContent)) {
-        e.classList.add = "chosen";
+        e.classList.add("chosen");
         this.activePhrase.showMatchedLetter(e.textContent);
       } else if (!this.activePhrase.checkLetter(e.textContent)) {
-        e.classList.add = "wrong";
+        e.classList.add("wrong");
         this.removeLife();
       }
     }
