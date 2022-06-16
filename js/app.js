@@ -26,7 +26,7 @@ document.addEventListener("keydown", (e) => {
   if (regex.test(e.key)) {
     let keys = document.querySelectorAll("button.key");
     for (let i = 0; i < keys.length; i++) {
-      if (e.key === keys[i].textContent && keys[i].disabled === false) {
+      if (e.key === keys[i].textContent && keys[i].disabled === false && document.querySelector("div#overlay").style.display === "none") {
         game.handleInteraction(keys[i]);
       }
     }
