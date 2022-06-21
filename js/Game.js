@@ -7,11 +7,11 @@ class Game {
   constructor() {
     this.missed = 0;
     this.phrases = [
-      new Phrase("Bo Jo"),
-      new Phrase("Quick Run"),
-      new Phrase("Jo Smoke"),
-      new Phrase("Zombie Survive"),
-      new Phrase("Alien Ant"),
+      new Phrase("No Cigar"),
+      new Phrase("Kitchen Sink"),
+      new Phrase("Silver Lining"),
+      new Phrase("A Busy Bee"),
+      new Phrase("Cup of Tea"),
     ];
     this.activePhrase = null;
   }
